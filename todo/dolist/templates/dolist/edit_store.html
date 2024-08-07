@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>редактировать магазин</title>
+</head>
+<body>
+    <h1>редактировать магазин</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">сохранить изменения</button>
+    </form>
+
+    <a href="{% url 'store_detail' store.id %}">вернуться в магазин</a>
+</body>
+</html>

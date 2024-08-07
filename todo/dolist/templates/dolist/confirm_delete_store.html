@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>удаление магазина</title>
+</head>
+<body>
+    <h1>вы уверены что хотите удалить магазин под названием "{{ store.name }}"?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">да хочу удалить</button>
+    </form>
+
+    <a href="{% url 'store_detail' store.id %}">отменить удаление</a>
+</body>
+</html>

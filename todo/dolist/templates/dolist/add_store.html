@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>добавление магазинов</title>
+</head>
+<body>
+    <h1>добавить магазин</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">добавить магазин</button>
+    </form>
+
+    <a href="{% url 'home' %}">вернуться на главную страницу</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.name }} - детали категорий</title>
+</head>
+<body>
+    <h1>{{ category.name }}</h1>
+
+    <h2>продукты</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }} - ${{ product.price }}
+            </li>
+        {% empty %}
+            <li>нет продуктов</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_product' store.id category.id %}">добавить продукт</a>
+    <a href="{% url 'store_detail' store.id %}">вернуться в магазин</a>
+</body>
+</html>
